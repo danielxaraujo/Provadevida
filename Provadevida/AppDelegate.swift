@@ -11,8 +11,14 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    var window: UIWindow?
+    public static var user: String?
+    public static var userName: String?
+    public static var image: UIImage?
+    public static var image64: String?
+    public static var video: URL?
+    public static var video64: String?
 
+    var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.

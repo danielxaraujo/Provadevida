@@ -191,14 +191,30 @@
                         <outlet property="cpf" destination="N0a-Pk-rhO" id="g0q-kp-iJs"/>
                         <outlet property="dn" destination="i62-EZ-wMT" id="Bmd-Vr-ZhM"/>
                         <outlet property="nb" destination="xfy-lp-MBa" id="zAT-9Q-zAv"/>
-                        <segue destination="fH4-Ym-cEG" kind="show" identifier="valido" id="hrr-qe-CdY"/>
+                        <segue destination="DF4-tb-8UW" kind="show" identifier="valido" id="q8E-Qj-6DL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hps-S0-sBa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3999.1999999999998" y="99.400299850074973"/>
         </scene>
-        <!--Picture View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="vyW-3a-5O4">
+            <objects>
+                <navigationController id="DF4-tb-8UW" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qob-3R-tXX">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="fH4-Ym-cEG" kind="relationship" relationship="rootViewController" id="XS8-3M-c2k"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MhE-2b-Dg1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3228" y="99"/>
+        </scene>
+        <!--Tirar Fotos-->
         <scene sceneID="rxc-59-Mxw">
             <objects>
                 <viewController id="fH4-Ym-cEG" customClass="PictureViewController" customModule="Provadevida" customModuleProvider="target" sceneMemberID="viewController">
@@ -207,17 +223,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo" translatesAutoresizingMaskIntoConstraints="NO" id="O5s-NL-1T2">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="1" y="64" width="375" height="603"/>
                             </imageView>
                             <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="26D-vt-kcc">
-                                <rect key="frame" x="0.0" y="507" width="375" height="160"/>
+                                <rect key="frame" x="0.0" y="463" width="375" height="160"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="160" id="fnH-Ck-WWI"/>
                                 </constraints>
                             </view>
                             <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ttp-fh-dKf" customClass="RoundButton" customModule="Provadevida" customModuleProvider="target">
-                                <rect key="frame" x="20" y="597" width="335" height="50"/>
+                                <rect key="frame" x="20" y="553" width="335" height="50"/>
                                 <color key="backgroundColor" red="0.0" green="0.59607843137254901" blue="0.396078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Kp2-aE-jag"/>
@@ -242,7 +258,7 @@
                                 </connections>
                             </button>
                             <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Gi-7o-67d" customClass="RoundButton" customModule="Provadevida" customModuleProvider="target">
-                                <rect key="frame" x="20" y="527" width="335" height="50"/>
+                                <rect key="frame" x="20" y="483" width="335" height="50"/>
                                 <color key="backgroundColor" red="0.0" green="0.45490196078431372" blue="0.73333333333333328" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="juT-De-xJo"/>
@@ -270,10 +286,10 @@
                             <constraint firstItem="38p-DY-bye" firstAttribute="trailing" secondItem="26D-vt-kcc" secondAttribute="trailing" id="68w-lC-yP8"/>
                             <constraint firstItem="26D-vt-kcc" firstAttribute="bottom" secondItem="38p-DY-bye" secondAttribute="bottom" id="7CY-3h-ZYb"/>
                             <constraint firstItem="ttp-fh-dKf" firstAttribute="leading" secondItem="38p-DY-bye" secondAttribute="leading" constant="20" id="Asa-hg-piL"/>
-                            <constraint firstItem="O5s-NL-1T2" firstAttribute="trailing" secondItem="38p-DY-bye" secondAttribute="trailing" id="Jbg-Q0-EHj"/>
+                            <constraint firstItem="O5s-NL-1T2" firstAttribute="trailing" secondItem="38p-DY-bye" secondAttribute="trailing" constant="1" id="Jbg-Q0-EHj"/>
                             <constraint firstItem="6Gi-7o-67d" firstAttribute="leading" secondItem="38p-DY-bye" secondAttribute="leading" constant="20" id="KlJ-DP-HMM"/>
                             <constraint firstItem="38p-DY-bye" firstAttribute="trailing" secondItem="ttp-fh-dKf" secondAttribute="trailing" constant="20" id="Mod-lj-5X4"/>
-                            <constraint firstItem="O5s-NL-1T2" firstAttribute="leading" secondItem="38p-DY-bye" secondAttribute="leading" id="XMq-pS-lwJ"/>
+                            <constraint firstItem="O5s-NL-1T2" firstAttribute="leading" secondItem="38p-DY-bye" secondAttribute="leading" constant="1" id="XMq-pS-lwJ"/>
                             <constraint firstItem="26D-vt-kcc" firstAttribute="leading" secondItem="38p-DY-bye" secondAttribute="leading" id="a86-tj-saj"/>
                             <constraint firstItem="O5s-NL-1T2" firstAttribute="top" secondItem="38p-DY-bye" secondAttribute="top" id="eHL-6V-BDf"/>
                             <constraint firstItem="ttp-fh-dKf" firstAttribute="top" secondItem="6Gi-7o-67d" secondAttribute="bottom" constant="20" id="g4I-av-Ybc"/>
@@ -283,13 +299,23 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="38p-DY-bye"/>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Tirar Fotos" id="UKl-Pr-3Sh">
+                        <barButtonItem key="backBarButtonItem" title="Voltar" id="R3I-S3-4wQ"/>
+                        <barButtonItem key="rightBarButtonItem" title="Próximo Passo" id="OwN-O3-ZBl">
+                            <connections>
+                                <segue destination="uyp-Vn-AL7" kind="show" id="2D5-4I-6bJ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="imageView" destination="O5s-NL-1T2" id="0SV-x1-dTN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vyy-cR-SNZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3263" y="99"/>
+            <point key="canvasLocation" x="-2428" y="99"/>
         </scene>
         <!--Gravar Videos-->
         <scene sceneID="CiY-g8-9Kk">
@@ -300,7 +326,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo" translatesAutoresizingMaskIntoConstraints="NO" id="h8q-2Y-iYJ">
-                                <rect key="frame" x="0.0" y="20" width="375" height="487"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="443"/>
                             </imageView>
                             <view alpha="0.69999998807907104" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BYP-hU-Keu">
                                 <rect key="frame" x="0.0" y="507" width="375" height="160"/>
@@ -328,6 +354,9 @@
                                         <color key="value" red="0.0" green="0.32950448500000001" blue="0.53433159720000001" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="shootVideo:" destination="uyp-Vn-AL7" eventType="touchUpInside" id="lXL-Tg-akM"/>
+                                </connections>
                             </button>
                             <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mGz-dC-3l6" customClass="RoundButton" customModule="Provadevida" customModuleProvider="target">
                                 <rect key="frame" x="20" y="597" width="335" height="50"/>
@@ -350,6 +379,9 @@
                                         <real key="value" value="2"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="sendVideo:" destination="uyp-Vn-AL7" eventType="touchUpInside" id="c2c-gg-c31"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -370,15 +402,17 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ZTh-23-ZPh"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Gravar Videos" id="2uw-XA-ZrT"/>
+                    <navigationItem key="navigationItem" title="Gravar Videos" id="fQL-gC-aTu">
+                        <barButtonItem key="backBarButtonItem" title="Voltar" id="ZqD-cp-YGB"/>
+                    </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="imageView" destination="h8q-2Y-iYJ" id="5ha-hJ-Ssd"/>
+                        <outlet property="videoView" destination="h8q-2Y-iYJ" id="pOd-xO-9Cu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ha4-1r-nfW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-442.39999999999998" y="-120.08995502248877"/>
+            <point key="canvasLocation" x="-1593" y="99"/>
         </scene>
     </scenes>
     <resources>

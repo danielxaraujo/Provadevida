@@ -1,9 +1,10 @@
 import UIKit
 import Alamofire
+import SwiftyJSON
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
 
-    let URL: String = "http://192.168.0.142:3000/login/"
+    let URL: String = "http://192.168.0.78:3000/login/"
 
     @IBOutlet weak var nb: UITextField!
     @IBOutlet weak var cpf: UITextField!
@@ -49,13 +50,16 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             "dt_nascimento": dn.text!
         ]
 
-        //Alamofire.request(URL, method: .post, parameters: parameters).responseJSON(completionHandler: { response in
-            //if response.result.isSuccess {
-                //if let json = response.result.value {
-                    self.performSegue(withIdentifier: "valido", sender: self/*json*/)
-                //}
-            //}
-        //})
+        Alamofire.request(URL, method: .post, parameters: parameters).responseJSON(completionHandler: { response in
+            if response.result.isSuccess {
+                if let temp = response.result.value {
+                    let json: JSON = JSON(temp)
+                    AppDelegate.user = "\(json["cpf"])"
+                    AppDelegate.userName = "\(json["nome"])"
+                    self.performSegue(withIdentifier: "valido", sender: self)
+                }
+            }
+        })
     }
 
     override func didReceiveMemoryWarning() {

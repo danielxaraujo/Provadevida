@@ -4,33 +4,32 @@ import Alamofire
 import CFAlertViewController
 import PKHUD    
 
-class PictureViewController: UIViewController, UIImagePickerControllerDelegate,
-UINavigationControllerDelegate {
+class PictureViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
-    let URL: String = "http://192.168.0.142:3000/usuario/96602210378/validar"
+    let URL: String = "http://192.168.0.78:3000/usuario/"
+    let URL2: String = "/validar"
     let picker = UIImagePickerController()
-    var imagemBase64: String?
 
     @IBOutlet weak var imageView: UIImageView!
 
     override func viewDidLoad() {
+
         super.viewDidLoad()
         picker.delegate = self
+
         let alertController = CFAlertViewController(title: "Atenção", message: "Neste passo iremos tirar uma foto que será utilizada para comprovação de vida através do reconhecimento das fotos do seu cadastro.", textAlignment: .justified, preferredStyle: .notification, didDismissAlertHandler: nil)
         present(alertController, animated: true, completion: nil)
     }
 
     //MARK: - Delegates
     public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        let chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage
-        //imageView.contentMode = .scaleAspectFill
-        imageView.image = chosenImage
-        dismiss(animated:true, completion: nil)
-
-        //let smallImage: UIImage = UIImage(cgImage: chosenImage.cgImage!, scale: 0., orientation: chosenImage.imageOrientation);
-
-        let data: NSData = UIImageJPEGRepresentation(chosenImage, 0.9)! as NSData
-        imagemBase64 = data.base64EncodedString(options: NSData.Base64EncodingOptions.lineLength64Characters)
+        if let chosenImage: UIImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            imageView.image = chosenImage
+            dismiss(animated:true, completion: nil)
+            
+            let data: NSData = UIImageJPEGRepresentation(chosenImage, 0.9)! as NSData
+            AppDelegate.image64 = data.base64EncodedString(options: NSData.Base64EncodingOptions.lineLength64Characters)
+        }
     }
 
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -50,7 +49,7 @@ UINavigationControllerDelegate {
     }
 
     @IBAction func sendPhoto(_ sender: UIButton) {
-        if let newImagem64 = imagemBase64 {
+        if let newImagem64 = AppDelegate.image64 {
             let parameters: Parameters = [
                 "imagem": newImagem64
             ]
@@ -58,7 +57,8 @@ UINavigationControllerDelegate {
             PKHUD.sharedHUD.show()
             PKHUD.sharedHUD.contentView = PKHUDProgressView()
 
-            Alamofire.request(URL, method: HTTPMethod.post, parameters: parameters, encoding: JSONEncoding.default).responseJSON(completionHandler: { response in
+            let newURL: String = URL + AppDelegate.user! + URL2
+            Alamofire.request(newURL, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON(completionHandler: { response in
                 if response.result.isSuccess {
                     if let json = response.result.value {
                         print(json)
