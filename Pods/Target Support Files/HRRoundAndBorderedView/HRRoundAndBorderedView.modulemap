@@ -1,0 +1,6 @@
+framework module HRRoundAndBorderedView {
+  umbrella header "HRRoundAndBorderedView-umbrella.h"
+
+  export *
+  module * { export * }
+}

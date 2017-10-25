@@ -7,21 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1940E41F9FED6A13DC9D7D10 /* Pods_Provadevida.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C481696852A38CA596AF006 /* Pods_Provadevida.framework */; };
 		655B57FC1F9FCC080010D1A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655B57FB1F9FCC080010D1A3 /* AppDelegate.swift */; };
-		655B57FE1F9FCC080010D1A3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655B57FD1F9FCC080010D1A3 /* ViewController.swift */; };
+		655B57FE1F9FCC080010D1A3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655B57FD1F9FCC080010D1A3 /* LoginViewController.swift */; };
 		655B58011F9FCC080010D1A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 655B57FF1F9FCC080010D1A3 /* Main.storyboard */; };
 		655B58031F9FCC080010D1A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 655B58021F9FCC080010D1A3 /* Assets.xcassets */; };
 		655B58061F9FCC080010D1A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 655B58041F9FCC080010D1A3 /* LaunchScreen.storyboard */; };
+		655DDA961FA09BDC00DE76BD /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655DDA951FA09BDC00DE76BD /* RoundButton.swift */; };
+		655DDA981FA09F9800DE76BD /* PlaceholderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655DDA971FA09F9800DE76BD /* PlaceholderTextView.swift */; };
+		655DDA9A1FA0B53D00DE76BD /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655DDA991FA0B53D00DE76BD /* VideoViewController.swift */; };
+		658E29851FA011DB00E46C6D /* PictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658E29841FA011DB00E46C6D /* PictureViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3C481696852A38CA596AF006 /* Pods_Provadevida.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Provadevida.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		655B57F81F9FCC080010D1A3 /* Provadevida.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Provadevida.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		655B57FB1F9FCC080010D1A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		655B57FD1F9FCC080010D1A3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		655B57FD1F9FCC080010D1A3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		655B58001F9FCC080010D1A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		655B58021F9FCC080010D1A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		655B58051F9FCC080010D1A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		655B58071F9FCC080010D1A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		655DDA951FA09BDC00DE76BD /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		655DDA971FA09F9800DE76BD /* PlaceholderTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderTextView.swift; sourceTree = "<group>"; };
+		655DDA991FA0B53D00DE76BD /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
+		658E29841FA011DB00E46C6D /* PictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureViewController.swift; sourceTree = "<group>"; };
+		A779D6BAA2AD29E5CAE32F43 /* Pods-Provadevida.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Provadevida.release.xcconfig"; path = "Pods/Target Support Files/Pods-Provadevida/Pods-Provadevida.release.xcconfig"; sourceTree = "<group>"; };
+		ABF47DCA307ECE395AA554CF /* Pods-Provadevida.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Provadevida.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Provadevida/Pods-Provadevida.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1940E41F9FED6A13DC9D7D10 /* Pods_Provadevida.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +53,8 @@
 			children = (
 				655B57FA1F9FCC080010D1A3 /* Provadevida */,
 				655B57F91F9FCC080010D1A3 /* Products */,
+				B624A8A3D609B2B5698190CD /* Pods */,
+				8E7824392B80BF8930DF5EF1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,13 +70,34 @@
 			isa = PBXGroup;
 			children = (
 				655B57FB1F9FCC080010D1A3 /* AppDelegate.swift */,
-				655B57FD1F9FCC080010D1A3 /* ViewController.swift */,
+				655B57FD1F9FCC080010D1A3 /* LoginViewController.swift */,
+				658E29841FA011DB00E46C6D /* PictureViewController.swift */,
 				655B57FF1F9FCC080010D1A3 /* Main.storyboard */,
+				655DDA971FA09F9800DE76BD /* PlaceholderTextView.swift */,
 				655B58021F9FCC080010D1A3 /* Assets.xcassets */,
 				655B58041F9FCC080010D1A3 /* LaunchScreen.storyboard */,
 				655B58071F9FCC080010D1A3 /* Info.plist */,
+				655DDA951FA09BDC00DE76BD /* RoundButton.swift */,
+				655DDA991FA0B53D00DE76BD /* VideoViewController.swift */,
 			);
 			path = Provadevida;
+			sourceTree = "<group>";
+		};
+		8E7824392B80BF8930DF5EF1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3C481696852A38CA596AF006 /* Pods_Provadevida.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B624A8A3D609B2B5698190CD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				ABF47DCA307ECE395AA554CF /* Pods-Provadevida.debug.xcconfig */,
+				A779D6BAA2AD29E5CAE32F43 /* Pods-Provadevida.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +107,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 655B580A1F9FCC080010D1A3 /* Build configuration list for PBXNativeTarget "Provadevida" */;
 			buildPhases = (
+				08B0FB83852DF0F934E6E9A9 /* [CP] Check Pods Manifest.lock */,
 				655B57F41F9FCC080010D1A3 /* Sources */,
 				655B57F51F9FCC080010D1A3 /* Frameworks */,
 				655B57F61F9FCC080010D1A3 /* Resources */,
+				B77E3D599E0F95990C3D4FAA /* [CP] Embed Pods Frameworks */,
+				381DDE3AD1D32E6C47F370CE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -131,13 +170,71 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		08B0FB83852DF0F934E6E9A9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Provadevida-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		381DDE3AD1D32E6C47F370CE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Provadevida/Pods-Provadevida-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B77E3D599E0F95990C3D4FAA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Provadevida/Pods-Provadevida-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Provadevida/Pods-Provadevida-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		655B57F41F9FCC080010D1A3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				655B57FE1F9FCC080010D1A3 /* ViewController.swift in Sources */,
+				655DDA961FA09BDC00DE76BD /* RoundButton.swift in Sources */,
+				655B57FE1F9FCC080010D1A3 /* LoginViewController.swift in Sources */,
+				655DDA9A1FA0B53D00DE76BD /* VideoViewController.swift in Sources */,
+				658E29851FA011DB00E46C6D /* PictureViewController.swift in Sources */,
 				655B57FC1F9FCC080010D1A3 /* AppDelegate.swift in Sources */,
+				655DDA981FA09F9800DE76BD /* PlaceholderTextView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +369,7 @@
 		};
 		655B580B1F9FCC080010D1A3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ABF47DCA307ECE395AA554CF /* Pods-Provadevida.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -287,6 +385,7 @@
 		};
 		655B580C1F9FCC080010D1A3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A779D6BAA2AD29E5CAE32F43 /* Pods-Provadevida.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

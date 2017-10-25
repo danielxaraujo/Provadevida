@@ -1,0 +1,24 @@
+PODS:
+  - Alamofire (4.5.1)
+  - CFAlertViewController (3.0)
+  - HRRoundAndBorderedView (1.3)
+  - PKHUD (5.0.0)
+  - SwiftyJSON (3.1.4)
+
+DEPENDENCIES:
+  - Alamofire
+  - CFAlertViewController
+  - HRRoundAndBorderedView
+  - PKHUD
+  - SwiftyJSON
+
+SPEC CHECKSUMS:
+  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  CFAlertViewController: 460bb12b42b500bb0838e5595ca144a18344765f
+  HRRoundAndBorderedView: e9f2b48f9a90ed2fd0b707539df065c2488cfc8f
+  PKHUD: 3c001512c6e002091184197a8de7a20420786e3b
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+
+PODFILE CHECKSUM: 11e115f53c0809cce86235c228e171c491ef5db9
+
+COCOAPODS: 1.1.1
