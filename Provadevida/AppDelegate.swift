@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Foundation
+import AVFoundation
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,9 +21,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     public static var video64: String?
 
     var window: UIWindow?
+    var _isFullScreen:Bool = false
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        NotificationCenter.default.addObserver(
+            self,
+            selector: "willExitFullScreen:",
+            name: NSNotification.Name(rawValue: "MoviePlayerWillExitFullscreenNotification"),
+            object: nil)
+        
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: "willEnterFullScreen:",
+            name: NSNotification.Name(rawValue: "MoviePlayerWillEnterFullscreenNotification"),
+            object: nil)
         return true
     }
 
@@ -47,6 +61,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    private func application(_ application: UIApplication, supportedInterfaceOrientationsForWindow window: UIWindow?) -> Int {
+        if (_isFullScreen) {
+            return Int(UIInterfaceOrientationMask.portrait.rawValue) | Int(UIInterfaceOrientationMask.landscapeLeft.rawValue) | Int(UIInterfaceOrientationMask.landscapeRight.rawValue)
+        } else {
+            return Int(UIInterfaceOrientationMask.portrait.rawValue)
+        }
+    }
+    
+    func willExitFullScreen(notification: NSNotification){
+        _isFullScreen = false
+    }
+    
+    func willEnterFullScreen(notification: NSNotification){
+        _isFullScreen = true
+    }
 
 }
 

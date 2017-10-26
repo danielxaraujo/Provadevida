@@ -115,6 +115,7 @@ UINavigationControllerDelegate {
             picker.modalPresentationStyle = .fullScreen
             picker.videoMaximumDuration = 10.0
             picker.mediaTypes = [kUTTypeMovie as String!]
+            picker.cameraDevice = .rear
             present(picker,animated: true,completion: nil)
         }
     }
@@ -131,24 +132,35 @@ UINavigationControllerDelegate {
             let newURL: String = URL + AppDelegate.user! + URL2
             Alamofire.request(newURL, method: HTTPMethod.post, parameters: parameters, encoding: JSONEncoding.default).responseJSON(completionHandler: { response in
                 if response.result.isSuccess {
-                    if let json: JSON = JSON(response.result.value as Any?) {
+                    PKHUD.sharedHUD.hide(afterDelay: 0)
+                    if let json: JSON = JSON(response.result.value as Any) {
+                        print(json)
                         var codigo: Int?
                         if let cod = json["validation_status"].int {
                             codigo = cod
-                            if (codigo == 0) {
-                                PKHUD.sharedHUD.hide(afterDelay: 0)
-                                let alertController = CFAlertViewController(title: "Sucesso", message: "Seu vídeo foi enviado com sucesso.", textAlignment: .justified, preferredStyle: .notification, didDismissAlertHandler: nil)
-                                self.present(alertController, animated: true, completion: nil)
-                                
-                                let when = DispatchTime.now() + 2
-                                DispatchQueue.main.asyncAfter(deadline: when) {
-                                    self.performSegue(withIdentifier: "posvideo", sender: self)
-                                }
+                        } else if let cod = json["erros"][0]["validation_status"].int {
+                            codigo = cod
+                        } else {
+                            return
+                        }
+                        if (codigo == 0) {
+                            let alertController = CFAlertViewController(title: "Sucesso", message: "Seu vídeo foi enviado com sucesso.", textAlignment: .justified, preferredStyle: .notification, didDismissAlertHandler: nil)
+                            self.present(alertController, animated: true, completion: nil)
+                            
+                            let when = DispatchTime.now() + 2
+                            DispatchQueue.main.asyncAfter(deadline: when) {
+                                self.performSegue(withIdentifier: "posvideo", sender: self)
                             }
+                        } else {
+                            PKHUD.sharedHUD.hide(afterDelay: 0)
+                            let alertController = CFAlertViewController(title: "Atenção", message: "A pessoa que aparece no video não tem relação com a pessoa da foto.", textAlignment: .justified, preferredStyle: .alert, didDismissAlertHandler: nil)
+                            self.present(alertController, animated: true, completion: nil)
                         }
                     }
                 } else {
-                    print(response.result)
+                    PKHUD.sharedHUD.hide(afterDelay: 0)
+                    let alertController = CFAlertViewController(title: "Atenção", message: "Erro de conexão na hora do envio do video.", textAlignment: .justified, preferredStyle: .alert, didDismissAlertHandler: nil)
+                    self.present(alertController, animated: true, completion: nil)
                 }
             })
         } else {

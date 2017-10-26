@@ -84,13 +84,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                         self.performSegue(withIdentifier: "valido", sender: nil)
                     } else {
                         PKHUD.sharedHUD.hide(afterDelay: 0)
-                        let alertController = CFAlertViewController(title: "Error", message: "Não foi possível encontrar beneficiário válido para os dados informados.", textAlignment: .justified, preferredStyle: .notification, didDismissAlertHandler: nil)
+                        let alertController = CFAlertViewController(title: "Error", message: "Não foi possível encontrar beneficiário válido para os dados informados.", textAlignment: .justified, preferredStyle: .alert, didDismissAlertHandler: nil)
                         self.present(alertController, animated: true, completion: nil)
                     }
                 }
             } else {
                 PKHUD.sharedHUD.hide(afterDelay: 0)
-                let alertController = CFAlertViewController(title: "Error", message: "Não foi possível encontrar beneficiário válido para os dados informados.", textAlignment: .justified, preferredStyle: .notification, didDismissAlertHandler: nil)
+                let alertController = CFAlertViewController(title: "Error", message: "Não foi possível encontrar beneficiário válido para os dados informados.", textAlignment: .justified, preferredStyle: .alert, didDismissAlertHandler: nil)
                 self.present(alertController, animated: true, completion: nil)
             }
         })

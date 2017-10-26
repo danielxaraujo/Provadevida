@@ -72,13 +72,13 @@
 				655B57FB1F9FCC080010D1A3 /* AppDelegate.swift */,
 				655B57FD1F9FCC080010D1A3 /* LoginViewController.swift */,
 				658E29841FA011DB00E46C6D /* PictureViewController.swift */,
+				655DDA991FA0B53D00DE76BD /* VideoViewController.swift */,
 				655B57FF1F9FCC080010D1A3 /* Main.storyboard */,
 				655DDA971FA09F9800DE76BD /* PlaceholderTextView.swift */,
 				655B58021F9FCC080010D1A3 /* Assets.xcassets */,
 				655B58041F9FCC080010D1A3 /* LaunchScreen.storyboard */,
 				655B58071F9FCC080010D1A3 /* Info.plist */,
 				655DDA951FA09BDC00DE76BD /* RoundButton.swift */,
-				655DDA991FA0B53D00DE76BD /* VideoViewController.swift */,
 			);
 			path = Provadevida;
 			sourceTree = "<group>";

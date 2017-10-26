@@ -87,13 +87,13 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
                                 self.performSegue(withIdentifier: "video", sender: self)
                             }
                         } else  if codigo == -1 {
-                            let alertController = CFAlertViewController(title: "Error", message: "Nenhum rosto foi reconhecido, tente outra foto.", textAlignment: .justified, preferredStyle: .notification, didDismissAlertHandler: nil)
+                            let alertController = CFAlertViewController(title: "Error", message: "Nenhum rosto foi reconhecido, tente outra foto.", textAlignment: .justified, preferredStyle: .alert, didDismissAlertHandler: nil)
                             self.present(alertController, animated: true, completion: nil)
                         } else if codigo == 1 {
-                            let alertController = CFAlertViewController(title: "Error", message: "A qualidade da foto não está adequada, tente outra foto.", textAlignment: .justified, preferredStyle: .notification, didDismissAlertHandler: nil)
+                            let alertController = CFAlertViewController(title: "Error", message: "A qualidade da foto não está adequada, tente outra foto.", textAlignment: .justified, preferredStyle: .alert, didDismissAlertHandler: nil)
                             self.present(alertController, animated: true, completion: nil)
                         } else if codigo == 2 {
-                            let alertController = CFAlertViewController(title: "Error", message: "Seu rosto não é compatível com os dados contidos no seu cadastro.", textAlignment: .justified, preferredStyle: .notification, didDismissAlertHandler: nil)
+                            let alertController = CFAlertViewController(title: "Error", message: "Seu rosto não é compatível com os dados contidos no seu cadastro.", textAlignment: .justified, preferredStyle: .alert, didDismissAlertHandler: nil)
                             self.present(alertController, animated: true, completion: nil)
                         }
                     }
