@@ -5,42 +5,46 @@ import Alamofire
 import CFAlertViewController
 import PKHUD
 import MobileCoreServices
+import AVKit
+import SwiftyJSON
 
 class VideoViewController: UIViewController, UIImagePickerControllerDelegate,
 UINavigationControllerDelegate {
     
-    let URL: String = "http://192.168.0.78:3000/usuario/"
+    let URL: String = "http://192.168.0.79:3000/usuario/"
     let URL2: String = "/video"
     let picker = UIImagePickerController()
     var videoBase64: String?
-    
-    @IBOutlet weak var videoView: UIImageView!
+    var videoURL: URL?
+
+    var player = AVPlayer()
+    var playerController = AVPlayerViewController()
+
+    @IBOutlet weak var videoView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         picker.delegate = self
-        let alertController = CFAlertViewController(title: "Atenção", message: "Neste passo iremos gravar um video com uma frase.", textAlignment: .justified, preferredStyle: .notification, didDismissAlertHandler: nil)
-        present(alertController, animated: true, completion: nil)
+
+        DispatchQueue.main.async {
+            let alert = CFAlertViewController(title: "Atenção \(AppDelegate.userName!)", message: "Estamos quase acabando, neste passo iremos gravar um vídeo que será utilizada para comprovar que você é a mesma da foto.", textAlignment: .justified, preferredStyle: .notification, didDismissAlertHandler: nil)
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     //MARK: - Delegates
     public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        let videoURL = info[UIImagePickerControllerMediaURL] as! URL
         dismiss(animated:true, completion: nil)
-        
-        if let fileURL: NSURL = info[UIImagePickerControllerMediaURL] as! NSURL {
+        if let fileURL: NSURL = info[UIImagePickerControllerMediaURL] as? NSURL {
+            self.videoURL = fileURL.absoluteURL
+            playVideo()
             if let data = NSData.init(contentsOf: fileURL as URL) {
                 videoBase64 = data.base64EncodedString(options: NSData.Base64EncodingOptions.lineLength64Characters)
-                print(videoBase64)
             }
         }
-
-        //let data: NSData = UIImageJPEGRepresentation(chosenImage, 0.9)! as NSData
-        //videoBase64 = data.base64EncodedString(options: NSData.Base64EncodingOptions.lineLength64Characters)
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        videoView.image = UIImage(named: "photo")
         dismiss(animated: true, completion: nil)
     }
 
@@ -127,19 +131,50 @@ UINavigationControllerDelegate {
             let newURL: String = URL + AppDelegate.user! + URL2
             Alamofire.request(newURL, method: HTTPMethod.post, parameters: parameters, encoding: JSONEncoding.default).responseJSON(completionHandler: { response in
                 if response.result.isSuccess {
-                    if let json = response.result.value {
-                        print(json)
+                    if let json: JSON = JSON(response.result.value as Any?) {
+                        var codigo: Int?
+                        if let cod = json["validation_status"].int {
+                            codigo = cod
+                            if (codigo == 0) {
+                                PKHUD.sharedHUD.hide(afterDelay: 0)
+                                let alertController = CFAlertViewController(title: "Sucesso", message: "Seu vídeo foi enviado com sucesso.", textAlignment: .justified, preferredStyle: .notification, didDismissAlertHandler: nil)
+                                self.present(alertController, animated: true, completion: nil)
+                                
+                                let when = DispatchTime.now() + 2
+                                DispatchQueue.main.asyncAfter(deadline: when) {
+                                    self.performSegue(withIdentifier: "posvideo", sender: self)
+                                }
+                            }
+                        }
                     }
                 } else {
                     print(response.result)
                 }
-                
-                PKHUD.sharedHUD.hide(afterDelay: 2.0)
             })
         } else {
+            PKHUD.sharedHUD.hide(afterDelay: 0)
             let alertController = CFAlertViewController(title: "Atenção", message: "Antes de enviar, você tem que tirar um video primeiro", textAlignment: .justified, preferredStyle: .alert, didDismissAlertHandler: nil)
             present(alertController, animated: true, completion: nil)
         }
+    }
+
+    func playVideo() {
+        player = AVPlayer(url: self.videoURL!)
+        let playerController = AVPlayerViewController()
+        playerController.player = player
+        self.addChildViewController(playerController)
+        
+        // Add your view Frame
+        playerController.view.frame = videoView.frame
+        
+        // Add sub view in your view
+        videoView.addSubview(playerController.view)
+        
+        player.play()
+    }
+
+    func stopVideo() {
+        player.pause()
     }
 }
 
