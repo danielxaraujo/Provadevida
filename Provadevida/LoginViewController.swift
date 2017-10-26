@@ -6,7 +6,7 @@ import CFAlertViewController
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
 
-    let URL: String = "http://192.168.0.79:3000/login/"
+    let URL: String = "http://192.168.0.39:3000/login/"
 
     @IBOutlet weak var nb: UITextField!
     @IBOutlet weak var cpf: UITextField!

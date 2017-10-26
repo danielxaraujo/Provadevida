@@ -7,7 +7,7 @@ import SwiftyJSON
 
 class PictureViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
-    let URL: String = "http://192.168.0.79:3000/usuario/"
+    let URL: String = "http://192.168.0.39:3000/usuario/"
     let URL2: String = "/validar"
     let picker = UIImagePickerController()
 

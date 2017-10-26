@@ -51,7 +51,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1234567890" borderStyle="roundedRect" placeholder="000.000.000.0" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xfy-lp-MBa" customClass="PlaceholderTextView" customModule="Provadevida" customModuleProvider="target">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="000.000.000.0" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xfy-lp-MBa" customClass="PlaceholderTextView" customModule="Provadevida" customModuleProvider="target">
                                                 <rect key="frame" x="5" y="45" width="265" height="34"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="34" id="ScC-3Q-1bB"/>
@@ -79,7 +79,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="96602210378" borderStyle="roundedRect" placeholder="000.000.00-00" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N0a-Pk-rhO" customClass="PlaceholderTextView" customModule="Provadevida" customModuleProvider="target">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="000.000.00-00" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N0a-Pk-rhO" customClass="PlaceholderTextView" customModule="Provadevida" customModuleProvider="target">
                                                 <rect key="frame" x="5" y="44.5" width="265" height="34"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="34" id="eWs-TM-vJw"/>
@@ -109,7 +109,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="09091983" borderStyle="roundedRect" placeholder="00/00/0000" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i62-EZ-wMT" customClass="PlaceholderTextView" customModule="Provadevida" customModuleProvider="target">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="00/00/0000" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i62-EZ-wMT" customClass="PlaceholderTextView" customModule="Provadevida" customModuleProvider="target">
                                                 <rect key="frame" x="5" y="45" width="265" height="34"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="34" id="x1f-6m-8bE"/>
